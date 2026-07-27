@@ -6,22 +6,49 @@ import { Link } from "react-router-dom";
 import Input from "../../../components/common/Input";
 import Button from "../../../components/common/Button";
 
+import { validateEmail, validatePassword } from "../../../services/validation";
+
 const Login = () => {
 
     const [email, setEmail] = useState("");
 
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [errors, setErrors] = useState({
+        email: "",
+        password: "",
+    });
 
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        console.log(email);
+        const nextErrors = {
+            email: "",
+            password: "",
+        };
 
-        console.log(password);
+        let hasError = false;
 
+        if (!validateEmail(email)) {
+            nextErrors.email = "Please enter a valid email address.";
+            hasError = true;
+        }
+
+        if (!validatePassword(password)) {
+            nextErrors.password = "Password must be at least 8 characters long.";
+            hasError = true;
+        }
+
+        setErrors(nextErrors);
+
+        if (!hasError) {
+            console.log(email);
+            console.log(password);
+        }
     };
 
+
+    
     return (
 
         <section className="login-page">
@@ -48,6 +75,8 @@ const Login = () => {
 
                         value={email}
 
+                        error={errors.email}
+
                         onChange={(e)=>setEmail(e.target.value)}
 
                     />
@@ -61,6 +90,8 @@ const Login = () => {
                         placeholder="Enter your password"
 
                         value={password}
+
+                        error={errors.password}
 
                         onChange={(e)=>setPassword(e.target.value)}
 

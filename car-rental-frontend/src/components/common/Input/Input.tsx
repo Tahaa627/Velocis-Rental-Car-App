@@ -6,6 +6,7 @@ interface InputProps {
   type?: string;
   placeholder?: string;
   value?: string;
+  error?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -14,6 +15,7 @@ const Input = ({
   type = "text",
   placeholder,
   value,
+  error,
   onChange,
 }: InputProps) => {
 
@@ -50,6 +52,7 @@ const Input = ({
         )}
 
       </div>
+      {error && <p className="input-error">{error}</p>}
 
     </div>
   );
