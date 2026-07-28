@@ -44,7 +44,7 @@ const Navbar = () => {
           {/* Buttons */}
           <div className="nav-buttons">
 
-            <Button variant="secondary">
+            <Button onClick={() => window.location.href = "/login"} variant="secondary">
               Login
             </Button>
 
