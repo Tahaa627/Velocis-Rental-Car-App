@@ -5,19 +5,22 @@ interface ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary";
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
   onClick?: () => void;
 }
 
 const Button = ({
   children,
   variant = "primary",
-  type = "button",
+  disabled = false,
+  type = "submit",
   onClick,
 }: ButtonProps) => {
   return (
     <button
       className={`btn ${variant}`}
       type={type}
+      disabled={disabled}
       onClick={onClick}
     >
       {children}
