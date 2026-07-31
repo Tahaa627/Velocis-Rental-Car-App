@@ -1,21 +1,39 @@
-// act as a backpack 
-// Stores User Token, login and logout
 import {createContext,useState,type ReactNode,} from "react";
 
 interface User {
-
-    id: string;
-    name: string;
-    email: string;
+  id: string;
+  name: string;
+  email: string;
 }
 
 interface AuthContextType {
-
-    user: User | null;
-    login: (user: User) => void;
-    logout: () => void;
+  user: User | null;
+  login: (user: User) => void;
+  logout: () => void;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(
-    undefined
+  undefined
 );
+
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
+  const [user, setUser] = useState<User | null>(null);
+
+  const login = (userData: User) => {
+    setUser(userData);
+  };
+
+  const logout = () => {
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{user,login,logout,}} >
+      {children}
+    </AuthContext.Provider>
+  );
+};
