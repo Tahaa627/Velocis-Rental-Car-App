@@ -1,11 +1,15 @@
 import "./Navbar.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Container from "../../common/Container";
 import Button from "../../common/Button";
 
-const Navbar = () => {
+import useAuth from "../../../hooks/useAuth";
 
+const Navbar = () => {
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -43,16 +47,38 @@ const Navbar = () => {
 
           {/* Buttons */}
           <div className="nav-buttons">
+            {user ? (
+              <>
+                <span className="user-name">
+                  Hi, {user.name}
+                </span>
+          
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                      logout();
+                      navigate("/");
+                  }}
+              >
+                  Logout
+              </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="secondary"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </Button>
+          
+                <Button>
+        Book Now
+                </Button>
+              </>
+            )}
 
-            <Button onClick={() => window.location.href = "/login"} variant="secondary">
-              Login
-            </Button>
-
-            <Button>
-              Book Now
-            </Button>
-
-          </div>
+</div>
 
           {/* Mobile Menu */}
           <div

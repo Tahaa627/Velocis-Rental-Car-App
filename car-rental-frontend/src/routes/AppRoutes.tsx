@@ -5,7 +5,6 @@ import Register from "../pages/Auth/Register";
 import ForgotPassword from "../pages/Auth/ForgotPassword";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
-import ProtectedRoute from "./ProtectedRoute";
 //import Fleet from "../pages/Fleet";
 
 const AppRoutes = () => {
