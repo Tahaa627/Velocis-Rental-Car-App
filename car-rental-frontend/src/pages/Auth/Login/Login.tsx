@@ -12,6 +12,9 @@ import {
   validatePassword,
 } from "../../../services/validation";
 
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+
 const Login = () => {
   // Form State
   const [email, setEmail] = useState("");
@@ -25,6 +28,9 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+
+  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,12 +57,14 @@ const Login = () => {
       // Simulate API Call
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      toast.success("Login Successful!");
-
-      console.log({
-        email,
-        password,
+      login({
+        id: "1",
+        name: "Taha",
+        email: email,
       });
+      
+      toast.success("Login Successful!");
+      navigate("/dashboard");
 
       // Later:
       // navigate("/dashboard");
