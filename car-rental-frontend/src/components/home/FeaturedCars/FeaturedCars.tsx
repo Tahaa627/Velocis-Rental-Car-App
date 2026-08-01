@@ -16,17 +16,17 @@ const FeaturedCars = () => {
 
       <div className="cars-grid">
 
-        {cars.map((car) => (
+        {cars.slice(0, 3).map((car) => (
 
           <CarCard
 
             key={car.id}
 
-            name={car.name}
+            name={car.brand + " " + car.model}
 
-            type={car.type}
+            type={car.category}
 
-            price={car.price}
+            price={car.pricePerDay}
 
             image={car.image}
 
