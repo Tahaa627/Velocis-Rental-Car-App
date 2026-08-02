@@ -20,6 +20,8 @@ export interface Car {
 
   available: boolean;
 
+  featured: boolean;
+
   category:
     | "SUV"
     | "Sedan"
