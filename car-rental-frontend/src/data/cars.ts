@@ -13,6 +13,7 @@ export const cars: Car[] = [
     rating: 4.8,
     reviews: 154,
     available: true,
+    featured: true,
     pricePerDay: 90,
     image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800",
     description:
@@ -30,6 +31,7 @@ export const cars: Car[] = [
     rating: 4.9,
     reviews: 212,
     available: true,
+    featured: false,
     pricePerDay: 110,
     image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800",
     description:
@@ -47,6 +49,7 @@ export const cars: Car[] = [
     rating: 4.7,
     reviews: 136,
     available: true,
+    featured: true,
     pricePerDay: 100,
     image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800",
     description:
@@ -64,6 +67,7 @@ export const cars: Car[] = [
     rating: 4.8,
     reviews: 184,
     available: true,
+    featured: false,
     pricePerDay: 120,
     image: "https://images.unsplash.com/photo-1617814076668-6d13d9c8c9c5?w=800",
     description:
@@ -81,6 +85,7 @@ export const cars: Car[] = [
     rating: 4.6,
     reviews: 98,
     available: true,
+    featured: false,
     pricePerDay: 85,
     image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800",
     description:
@@ -98,6 +103,7 @@ export const cars: Car[] = [
     rating: 4.5,
     reviews: 142,
     available: true,
+    featured: true,
     pricePerDay: 70,
     image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800",
     description:
@@ -115,6 +121,7 @@ export const cars: Car[] = [
     rating: 5.0,
     reviews: 76,
     available: true,
+    featured: false,
     pricePerDay: 250,
     image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800",
     description:
@@ -132,6 +139,7 @@ export const cars: Car[] = [
     rating: 4.8,
     reviews: 120,
     available: true,
+    featured: false,
     pricePerDay: 130,
     image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800",
     description:
@@ -149,6 +157,7 @@ export const cars: Car[] = [
     rating: 4.4,
     reviews: 95,
     available: true,
+    featured: false,
     pricePerDay: 75,
     image: "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=800",
     description:
@@ -166,6 +175,7 @@ export const cars: Car[] = [
     rating: 4.5,
     reviews: 110,
     available: true,
+    featured: false,
     pricePerDay: 80,
     image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800",
     description:
@@ -183,6 +193,7 @@ export const cars: Car[] = [
     rating: 4.9,
     reviews: 88,
     available: true,
+    featured: false,
     pricePerDay: 180,
     image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800",
     description:
@@ -200,6 +211,7 @@ export const cars: Car[] = [
     rating: 4.9,
     reviews: 145,
     available: true,
+    featured: false,
     pricePerDay: 200,
     image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800",
     description:
