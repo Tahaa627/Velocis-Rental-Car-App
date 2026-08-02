@@ -16,8 +16,7 @@ const FeaturedCars = () => {
 
       <div className="cars-grid">
 
-        {cars.slice(0, 3).map((car) => (
-
+        {cars.filter((car) => car.featured).map((car) => (
           <CarCard
 
             key={car.id}
