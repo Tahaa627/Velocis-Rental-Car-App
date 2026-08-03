@@ -1,7 +1,14 @@
 import "./CarCard.css";
 
 import type { Car } from "../../../types/car";
-import Button from "../../common/Button/Button";
+import Button from "../../common/Button";
+import {
+  Users,
+  Fuel,
+  Settings,
+  CalendarDays,
+  Star,
+} from "lucide-react";
 
 interface CarCardProps {
   car: Car;
@@ -12,34 +19,45 @@ const CarCard = ({ car }: CarCardProps) => {
     <div className="car-card">
 
       <div className="car-image">
-        <img src={car.image} alt={`${car.brand} ${car.model}`} />
 
-        <span className="car-rating">
-          ⭐ {car.rating}
+        <img
+          src={car.image}
+          alt={`${car.brand} ${car.model}`}
+        />
+
+        <span className="badge category">
+          {car.category}
         </span>
+
+        <span className="badge rating">
+          <Star size={14} fill="#FFD700" color="#FFD700" />
+          {car.rating}
+        </span>
+
       </div>
 
-      <div className="car-content">
+      <div className="car-body">
 
-        <div className="car-header">
-          <h3>
-            {car.brand} {car.model}
-          </h3>
-
-          <span>{car.year}</span>
-        </div>
-
-        <p className="car-category">
-          {car.category}
-        </p>
+        <h3>
+          {car.year} {car.brand} {car.model}
+        </h3>
 
         <div className="car-specs">
 
-          <span>👥 {car.seats} Seats</span>
+          <div>
+            <Settings size={18} />
+            <span>{car.transmission}</span>
+          </div>
 
-          <span>⚙️ {car.transmission}</span>
+          <div>
+            <Fuel size={18} />
+            <span>{car.fuelType}</span>
+          </div>
 
-          <span>⛽ {car.fuelType}</span>
+          <div>
+            <Users size={18} />
+            <span>{car.seats} Seats</span>
+          </div>
 
         </div>
 
@@ -47,11 +65,32 @@ const CarCard = ({ car }: CarCardProps) => {
 
           <div>
 
-            <h4>${car.pricePerDay}</h4>
+            <small>Daily Rate</small>
 
-            <small>/ day</small>
+            <h2>
+              ${car.pricePerDay}
+              <span>/day</span>
+            </h2>
 
           </div>
+
+          <div className="availability">
+
+            <CalendarDays size={16} />
+
+            <span>
+              {car.available ? "Available" : "Booked"}
+            </span>
+
+          </div>
+
+        </div>
+
+        <div className="car-buttons">
+
+          <Button variant="secondary">
+            View Details
+          </Button>
 
           <Button>
             Book Now

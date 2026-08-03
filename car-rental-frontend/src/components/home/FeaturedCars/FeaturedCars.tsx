@@ -1,7 +1,10 @@
 import "./FeaturedCars.css";
 
-import CarCard from "../CarCard";
+//import CarCard from "../CarCard";
 
+//import { cars } from "../../../data/cars";
+
+import CarCard from "../../fleet/CarCard";
 import { cars } from "../../../data/cars";
 
 const FeaturedCars = () => {
@@ -21,13 +24,8 @@ const FeaturedCars = () => {
 
             key={car.id}
 
-            name={car.brand + " " + car.model}
+            car = {car}
 
-            type={car.category}
-
-            price={car.pricePerDay}
-
-            image={car.image}
 
           />
 
