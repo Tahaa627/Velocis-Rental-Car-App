@@ -6,12 +6,15 @@ import ForgotPassword from "../pages/Auth/ForgotPassword";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Fleet from "../pages/Fleet";
+import MainLayout from "../layouts/MainLayout";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route element={<MainLayout />}>
       <Route path="/" element={<Home />} />
       <Route path="/fleet" element={<Fleet />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

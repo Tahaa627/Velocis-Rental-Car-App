@@ -1,0 +1,28 @@
+.fleet-search{
+    margin:50px 0;
+}
+
+.fleet-search input{
+
+    width:100%;
+
+    padding:18px 24px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.fleet-search input:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
