@@ -32,9 +32,9 @@ const Navbar = () => {
           <nav className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
             <ul>
 
-              <li><a href="#">Home</a></li>
+              <li><a onClick={() => navigate("/")}>Home</a></li>
 
-              <li><a href="#">Fleet</a></li>
+              <li><a onClick={() => navigate("/fleet")}>Fleet</a></li>
 
               <li><a href="#">Locations</a></li>
 
