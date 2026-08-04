@@ -58,6 +58,8 @@
 
     transition:.3s;
 
+    cursor:pointer;
+
 }
 
 .nav-menu a:hover{
